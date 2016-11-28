@@ -1,0 +1,24 @@
+<div class="container">
+
+
+<h1>Bonjour, identifiez-vous</h1>
+
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-inputs">
+    <%= f.input :email, required: false, autofocus: true %>
+    <%= f.input :password, label: "Mot de passe", required: false %>
+    <%= link_to "Mot de passe oublié?", new_password_path(resource_name) %><br />
+  </div>
+
+  <div class="form-actions text-center">
+    <%= f.button :submit, "Connexion", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<div class="text-center" style="margin-top: 20px">
+  <%= link_to new_registration_path(resource_name) do %>
+    <div class="btn btn-secondary">Nouveau chez Anenke ? Créez votre compte</div>
+  <% end %>
+</div>
+
+</div>
