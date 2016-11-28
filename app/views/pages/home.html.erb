@@ -51,7 +51,7 @@
     <div class="row">
       <div class="col-xs-4">
         <div class="dashedline"></div>
-        <h4>Envoi de l'empreinte 3D et de la prescription.</h4>
+        <h4>Envoi de l'empreinte 3D et de la prescription via WeTransfer.</h4>
       </div>
       <div class="col-xs-4">
         <div class="dashedline"></div>
@@ -70,11 +70,11 @@
     <h2 class="text-center"><strong> L'équipe </strong></h2>
     <div class="row">
       <div class="col-xs-6">
-        <div class="text-center"> <%= image_tag "greg.jpg", class: "badge-round text-center" %> </div>
+        <div class="text-center"> <%= image_tag "dan.png", class: "badge-round text-center" %> </div>
         <h4 class="text-center"><strong> Dan Benarouch</strong></h4>
       </div>
       <div class="col-xs-6">
-        <h4>Chirurgien dentiste, orthodontie exclusive. Travaille en libéral dans un cabinet. Master 2 en imagerie médicale. DU d’Orthodontie Linguale Adulte 2015. Chargés de TP dans le service d’Orthodontie de la Pitié Salpêtrière. Dan est Président d'Anenke, en charge de la R&D et du Produit</h4>
+        <h4>Chirurgien dentiste, orthodontie exclusive. Travaille en libéral dans un cabinet. Master 2 en imagerie médicale. Chargés de TP dans le service d’Orthodontie de la Pitié Salpêtrière. Dan est Président d'Anenke, en charge de la R&D et du Produit</h4>
       </div>
     </div>
     <div class="dashedline" style="margin: 20px"></div>
@@ -84,13 +84,13 @@
         <h4 class="text-center"><strong> Grégoire Schiller</strong></h4>
       </div>
       <div class="col-xs-6">
-        <h4>Diplômé d'HEC Paris. Après plusieurs années en conseil en stratégie à Paris, Grégoire a dirigé une startup ecommerce dans 4 pays en Asie. Il a ensuite suivi une formation de programmation web. Grégoire est CEO d'Anenke, en charge du Commercial et du Marketing</h4>
+        <h4>Diplômé d'HEC Paris. Après plusieurs années en conseil en stratégie à Paris, Grégoire a dirigé une startup ecommerce dans 4 pays en Asie. Grégoire est CEO d'Anenke, en charge du Commercial et du Marketing</h4>
       </div>
     </div>
     <div class="dashedline" style="margin: 20px"></div>
     <div class="row">
       <div class="col-xs-6">
-        <div class="text-center"> <%= image_tag "greg.jpg", class: "badge-round text-center" %> </div>
+        <div class="text-center"> <%= image_tag "delphine.png", class: "badge-round text-center" %> </div>
         <h4 class="text-center"><strong> Delphine Majbruch</strong></h4>
       </div>
       <div class="col-xs-6">
@@ -125,5 +125,43 @@
         <h4>70 euros</h4>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="wrapper-colored">
+  <div class="container">
+    <h2 class="text-center">Interessé ? Inscrivez-vous</h2>
+    <% resource = User.new %>
+    <% resource_name = :user %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+      <div class="row">
+        <div class="col-xs-6">
+          <%= f.input :first_name, label: "Votre prénom", required: true %>
+        </div>
+        <div class="col-xs-6">
+          <%= f.input :last_name, label: "Votre nom", required: true %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <%= f.input :email, label: "Votre email", required: true, autofocus: true %>
+        </div>
+        <div class="col-xs-6">
+          <%= f.input :telephone, label: "Votre téléphone", required: false %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <%= f.input :password, label: "Votre mot de passe", required: true, hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length) %>
+        </div>
+        <div class="col-xs-6">
+          <%= f.input :password_confirmation, label: "Votre mot de passe de nouveau", required: true %>
+        </div>
+      </div>
+      <div class="text-center">
+        <%= f.button :submit, "Créer mon compte", class: "btn btn-primary" %>
+      </div>
+    <% end %>
   </div>
 </div>
