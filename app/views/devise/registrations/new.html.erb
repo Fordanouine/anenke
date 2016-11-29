@@ -1,22 +1,22 @@
-<div class="container">
+<div class="container" style="height: 100vh">
 
-<h1>Créer un compte</h1>
+  <h1 class="text-center">Créer un compte</h1>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :first_name, label: "Votre prénom", required: true %>
-    <%= f.input :last_name, label: "Votre nom", required: true %>
-    <%= f.input :email, label: "Votre email", required: true %>
-    <%= f.input :password, label: "Votre mot de passe", required: true, hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, label: "Votre mot de passe de nouveau", required: true %>
-    <%= f.input :telephone, label: "Votre téléphone", required: false %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :first_name, label: "Votre prénom", required: true, error: "prénom obligatoire" %>
+      <%= f.input :last_name, label: "Votre nom", required: true, error: "nom obligatoire" %>
+      <%= f.input :email, label: "Votre email", required: true, error: "email obligatoire" %>
+      <%= f.input :password, label: "Votre mot de passe", required: true, hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length), error: "mot de passe obligatoire" %>
+      <%= f.input :password_confirmation, label: "Votre mot de passe de nouveau", required: true %>
+      <%= f.input :telephone, label: "Votre téléphone", required: false %>
+    </div>
 
-  <div class="form-actions text-center">
-    <%= f.button :submit, "Créer mon compte", class: "btn btn-primary" %>
-  </div>
-<% end %>
+    <div class="form-actions text-center">
+      <%= f.button :submit, "Créer mon compte", class: "btn btn-primary" %>
+    </div>
+  <% end %>
 
 </div>
