@@ -8,7 +8,7 @@
   <div class="form-inputs">
     <%= f.input :first_name, label: "Votre prénom", required: true %>
     <%= f.input :last_name, label: "Votre nom", required: true %>
-    <%= f.input :email, label: "Votre email", required: true, autofocus: true %>
+    <%= f.input :email, label: "Votre email", required: true %>
     <%= f.input :password, label: "Votre mot de passe", required: true, hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation, label: "Votre mot de passe de nouveau", required: true %>
     <%= f.input :telephone, label: "Votre téléphone", required: false %>

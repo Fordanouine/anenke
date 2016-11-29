@@ -10,35 +10,41 @@
 </div>
 
 <div class="wrapper-colored">
-  <div class="container text-center">
+  <div class="container text-center h2">
     <h2><strong> Bénéfices </strong></h2>
     <div class="row">
       <div class="col-xs-4">
-        <div class="dashedline"></div>
+        <%= image_tag "plus.png", class: "sized-picto" %>
+        <div class="dashedline" style="margin: 10px 0px"></div>
         <h4>Une précision jamais atteinte, une qualité et un confort inédits.</h4>
       </div>
       <div class="col-xs-4">
-        <div class="dashedline"></div>
+        <%= image_tag "microscope.png", class: "sized-picto" %>
+        <div class="dashedline" style="margin: 10px 0px"></div>
         <h4>2 ans de R&D en partenariat avec des spécialistes mondiaux de l'impression 3D au MIT.</h4>
         <div class="dashedline"></div>
         <h4>Résines biocompatibles certifiées.</h4>
       </div>
       <div class="col-xs-4">
-        <div class="dashedline"></div>
+        <%= image_tag "garantie.png", class: "sized-picto" %>
+        <div class="dashedline" style="margin: 10px 0px"></div>
         <h4>Garantie et service : en cas de problème, nous remplaçons votre appareil.</h4>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-4">
-        <div class="dashedline"></div>
+        <%= image_tag "prix.png", class: "sized-picto" %>
+        <div class="dashedline" style="margin: 10px 0px"></div>
         <h4>Des appareils moins chers grâce à une technologie innovante.</h4>
       </div>
       <div class="col-xs-4">
-        <div class="dashedline"></div>
+        <%= image_tag "livraison.png", class: "sized-picto" %>
+        <div class="dashedline" style="margin: 10px 0px"></div>
         <h4>Livraison en 5 jours partout en France métropolitaine..</h4>
       </div>
       <div class="col-xs-4">
-        <div class="dashedline"></div>
+        <%= image_tag "durable.png", class: "sized-picto" %>
+        <div class="dashedline" style="margin: 10px 0px"></div>
         <h4>Développement durable, économe en matière.</h4>
       </div>
     </div>
@@ -46,19 +52,22 @@
 </div>
 
 <div class="wrapper">
-  <div class="container text-center">
+  <div class="container text-center h2">
     <h2><strong> Comment ça marche ? </strong></h2>
     <div class="row">
       <div class="col-xs-4">
-        <div class="dashedline"></div>
+        <%= image_tag "envoie.png", class: "sized-picto" %>
+        <div class="dashedline" style="margin: 10px 0px"></div>
         <h4>Envoi de l'empreinte 3D et de la prescription via WeTransfer.</h4>
       </div>
       <div class="col-xs-4">
-        <div class="dashedline"></div>
+        <%= image_tag "conception.png", class: "sized-picto" %>
+        <div class="dashedline" style="margin: 10px 0px"></div>
         <h4>Conception et impression de l'appareil choisi.</h4>
       </div>
       <div class="col-xs-4">
-        <div class="dashedline"></div>
+        <%= image_tag "livraison2.png", class: "sized-picto" %>
+        <div class="dashedline" style="margin: 10px 0px"></div>
         <h4>Livraison en 5 jours ouvrés.</h4>
       </div>
     </div>
@@ -66,7 +75,7 @@
 </div>
 
 <div class="wrapper-colored">
-  <div class="container">
+  <div class="container h2">
     <h2 class="text-center"><strong> L'équipe </strong></h2>
     <div class="row">
       <div class="col-xs-6">
@@ -101,7 +110,7 @@
 </div>
 
 <div class="wrapper">
-  <div class="container text-center">
+  <div class="container text-center h2">
     <h2 class="text-center"><strong> Les produits </strong></h2>
     <div class="row">
       <div class="col-xs-3">
@@ -128,34 +137,34 @@
   </div>
 </div>
 
-<div class="wrapper-colored">
-  <div class="container">
-    <h2 class="text-center">Interessé ? Inscrivez-vous</h2>
+<div class="wrapper-colored" style="margin: 0px 0px 30px 0px">
+  <div class="container h2">
+    <h2 class="text-center"><strong>Interessé ? Inscrivez-vous</strong></h2>
     <% resource = User.new %>
     <% resource_name = :user %>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
       <div class="row">
-        <div class="col-xs-6">
+        <div class="col-xs-6 inputs">
           <%= f.input :first_name, label: "Votre prénom", required: true %>
         </div>
-        <div class="col-xs-6">
+        <div class="col-xs-6 inputs">
           <%= f.input :last_name, label: "Votre nom", required: true %>
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-6">
-          <%= f.input :email, label: "Votre email", required: true, autofocus: true %>
+        <div class="col-xs-6 inputs">
+          <%= f.input :email, label: "Votre email", required: true %>
         </div>
-        <div class="col-xs-6">
+        <div class="col-xs-6 inputs">
           <%= f.input :telephone, label: "Votre téléphone", required: false %>
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-6">
+        <div class="col-xs-6 inputs">
           <%= f.input :password, label: "Votre mot de passe", required: true, hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length) %>
         </div>
-        <div class="col-xs-6">
+        <div class="col-xs-6 inputs">
           <%= f.input :password_confirmation, label: "Votre mot de passe de nouveau", required: true %>
         </div>
       </div>

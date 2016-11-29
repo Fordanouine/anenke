@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
   def show
-    @skip_footer = true
+    @user = current_user
   end
 end

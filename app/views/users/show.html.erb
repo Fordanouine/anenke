@@ -1,1 +1,60 @@
-<h1>show du user</h1>
+<div class="wrapper-blue">
+  <div class="container">
+    <h2 class="text-center" style="padding: 30px"><strong>Bienvenue</strong></h2>
+    <div class="row">
+      <div class="col-xs-offset-1 col-xs-10">
+        <div class="text-center", style="transform: translateY(50%)">
+          <i class= "fa fa-user onboarding-icon text-center"></i>
+        </div>
+        <div class="card-desktop-onboarding">
+          <div class="question text-center">
+            <div class="row">
+              <div class="col-xs-6">
+                <h4>Nom : <%= @user.first_name %> <%= @user.last_name %></h4>
+              </div>
+              <div class="col-xs-6">
+                <h4>Email : <%= @user.email %> </h4>
+              </div>
+            </div>
+            <%= link_to "Editer mon compte", edit_user_registration_path, class: "btn btn-lg btn-primary", style: 'margin: 20px' %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="text-center" style="padding: 30px 0px 100px 0px"><strong> Comment effectuer la commande d'un appareil ?</strong></h2>
+    <div class="row" style="padding: 0px 0px 80px 0px">
+      <div class="col-xs-4">
+        <div class="text-center">
+          <i class= "fa fa-download onboarding-icon text-center"></i>
+          <div class="dashedline" style="margin: 10px 0px"></div>
+          <h4>Je télécharge le formulaire de commande.</h4>
+          <div class="text-center">
+           <%= link_to "Télécharger", "https://drive.google.com/drive/folders/0B8d9_VAZUAGadDRiQkc3Y1g2bTA?usp=sharing", :target => "_blank", class: "btn btn-lg btn-primary" %>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="text-center">
+          <i class= "fa fa-exchange onboarding-icon text-center"></i>
+          <div class="dashedline" style="margin: 10px 0px"></div>
+          <h4>J'envoie le formulaire de commande ainsi que les empreintes .stl de mon patient, maxillaire (avec tout le palais) et mandibule via WeTransfer sur l'adresse "commandes@anenke.com".</h4>
+          <div class="text-center">
+           <%= link_to "Accéder à WeTransfer", "https://wetransfer.com/", :target => "_blank", class: "btn btn-lg btn-primary" %>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="text-center">
+          <i class= "fa fa-check onboarding-icon text-center"></i>
+          <div class="dashedline" style="margin: 10px 0px"></div>
+          <h4>Je reçois sous 24h une confirmation de Anenke pour me confirmer que mon appareil pourra bien être fabriqué. Puis je reçois mon appareil 5 jours ouvrés après ma commande.</h4>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+</div>

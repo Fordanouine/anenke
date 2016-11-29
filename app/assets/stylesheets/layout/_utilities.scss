@@ -37,3 +37,9 @@
   margin: 0 auto;
   width: 970px;
 }
+
+.global-wrapper {
+  position: relative;
+  min-height: calc(100vh);
+  padding-bottom: 83px;
+}
